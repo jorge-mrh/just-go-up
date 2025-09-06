@@ -55,7 +55,7 @@ public class PlatformBehavior : MonoBehaviour
     {
         if (player.IsChildOf(transform))
         {
-            centerLight.intensity = 1f;
+            centerLight.intensity = 0.3f;
             Vector3 centerLightPos = centerLight.transform.position;
             centerLightPos = new Vector3(player.position.x, centerLightPos.y, centerLightPos.z);
             centerLight.transform.position = centerLightPos;

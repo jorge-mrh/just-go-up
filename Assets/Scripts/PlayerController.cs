@@ -30,6 +30,23 @@ public class PlayerController : MonoBehaviour
         float rawScore = (transform.position.y - startingY) * scoreMultiplier;
         currentScore = Mathf.Max(0, Mathf.RoundToInt(rawScore));
 
+        Camera cam = Camera.main;
+        Vector3 leftEdge = cam.ViewportToWorldPoint(new Vector3(0, 0.5f, 0));
+        Vector3 rightEdge = cam.ViewportToWorldPoint(new Vector3(1, 0.5f, 0));
+        
+        Vector3 pos = transform.position;
+        float halfWidth = 0.1f; // Half of player's width
+        pos.x = Mathf.Clamp(pos.x, leftEdge.x + halfWidth, rightEdge.x - halfWidth);
+        transform.position = pos;
+        
+        // If clamped and on platform, unparent
+        // if (transform.parent != null && 
+        //     (transform.position.x <= leftEdge.x + halfWidth + 0.01f || 
+        //     transform.position.x >= rightEdge.x - halfWidth - 0.01f))
+        // {
+        //     transform.SetParent(null);
+        // }
+
         bool canJump =
             ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ||
             Input.GetMouseButtonDown(0)) && numOfJumps > 0;
