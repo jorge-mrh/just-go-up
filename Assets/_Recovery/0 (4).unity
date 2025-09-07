@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792695ded0092d441a8336ddb3fb4c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  soundtrack: {fileID: 983653542}
+  soundtrack: {fileID: 0}
 --- !u!114 &296131004
 MonoBehaviour:
   m_ObjectHideFlags: 0

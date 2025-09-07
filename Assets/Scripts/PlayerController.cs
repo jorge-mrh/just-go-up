@@ -38,14 +38,6 @@ public class PlayerController : MonoBehaviour
         float halfWidth = 0.1f; // Half of player's width
         pos.x = Mathf.Clamp(pos.x, leftEdge.x + halfWidth, rightEdge.x - halfWidth);
         transform.position = pos;
-        
-        // If clamped and on platform, unparent
-        // if (transform.parent != null && 
-        //     (transform.position.x <= leftEdge.x + halfWidth + 0.01f || 
-        //     transform.position.x >= rightEdge.x - halfWidth - 0.01f))
-        // {
-        //     transform.SetParent(null);
-        // }
 
         bool canJump =
             ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) ||
@@ -77,7 +69,6 @@ public class PlayerController : MonoBehaviour
                         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 10f);
                     }
 
-                    CameraShakeManager.instance.CameraShake(impulseSource);
                     SoundManager.instance.PlayLandingSound();
                     transform.SetParent(collision.transform, true);
                     numOfJumps = 2;
