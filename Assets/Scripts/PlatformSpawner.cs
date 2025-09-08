@@ -138,19 +138,18 @@ public class PlatformGenerator : MonoBehaviour
     {
         if (player == null) return;
         List<GameObject> platformsToRemove = new List<GameObject>();
+        float previousHighestY = highestPlatformY;
 
         foreach (GameObject platform in activePlatforms)
         {
             if (platform == null) continue;
+            if (platform == firstPlatform) continue;
 
             float y = platform.transform.position.y;
-            if (platform == firstPlatform) continue;
 
             // Remove platforms too far above or below the player
             if (y > player.position.y + optimizeDistance || y < player.position.y - optimizeDistance)
             {
-                // // Detach player
-                // player.SetParent(null);
                 ObjectPoolManager.ReturnObjectPool(platform);
                 platformsToRemove.Add(platform);
             }
@@ -161,13 +160,14 @@ public class PlatformGenerator : MonoBehaviour
             activePlatforms.Remove(platform);
         }
 
-        highestPlatformY = firstPlatformY;
+        float newHighestY = firstPlatformY;
         foreach (GameObject platform in activePlatforms)
         {
             if (platform == null) continue;
             float y = platform.transform.position.y;
-            if (y > highestPlatformY) highestPlatformY = y;
+            if (y > newHighestY) newHighestY = y;
         }
+        highestPlatformY = Mathf.Max(newHighestY, previousHighestY - spacingMax);
     }
 
 }

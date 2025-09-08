@@ -55,6 +55,7 @@ public class HUDController : MonoBehaviour
     private void Reload()
     {
         Time.timeScale = 1f;
+        currentScore = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     
