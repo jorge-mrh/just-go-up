@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 302991b886ceb774c9d20c0add65569f
+guid: 78a948b037078ac4a8d1bc17288d775e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -432028185092051259
-    second: regular_platform-02_0
+      213: 3330030804583911422
+    second: Artboard 3 copy_0
+  - first:
+      213: -4970976556223271011
+    second: Artboard 3 copy_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,10 +51,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,10 +75,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
-    resizeAlgorithm: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -152,13 +155,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: regular_platform-02_0
+      name: Artboard 3 copy_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1200
-        height: 84
+        x: 12
+        y: 8
+        width: 26
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +170,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5cea1a697a0210af0800000000000000
-      internalID: -432028185092051259
+      spriteID: eff055e9f55a63e20800000000000000
+      internalID: 3330030804583911422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Artboard 3 copy_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 20
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9f6483d82b830bb0800000000000000
+      internalID: -4970976556223271011
       vertices: []
       indices: 
       edges: []
@@ -187,7 +212,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      regular_platform-02_0: -432028185092051259
+      Artboard 3 copy_0: 3330030804583911422
+      Artboard 3 copy_1: -4970976556223271011
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -194,6 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792695ded0092d441a8336ddb3fb4c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  soundOnIcon: {fileID: 2800000, guid: ea0db6c0c732f0540b7b3fe115d33bc8, type: 3}
+  soundOffIcon: {fileID: 2800000, guid: 78a948b037078ac4a8d1bc17288d775e, type: 3}
   soundtrack: {fileID: 983653542}
 --- !u!114 &296131004
 MonoBehaviour:

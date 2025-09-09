@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: fed7c0784cd361e4da808cbc179fd2c7
+guid: 8d4e219a5f40fde42ae44e902206f82c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3783328935998231722
-    second: spring_platform-02_0
+      213: 8017771977026345209
+    second: Sound-Two_0
+  - first:
+      213: -7811332966407008764
+    second: Sound-Two_1
+  - first:
+      213: -4538225708983276127
+    second: Sound-Two_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +158,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spring_platform-02_0
+      name: Sound-Two_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1200
-        height: 84
+        y: 2
+        width: 29
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +173,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 65b6e5da06aee7bc0800000000000000
-      internalID: -3783328935998231722
+      spriteID: 9f89cb41229d44f60800000000000000
+      internalID: 8017771977026345209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sound-Two_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 18
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40e0303ad02989390800000000000000
+      internalID: -7811332966407008764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sound-Two_2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 14
+        width: 11
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ada18123cbf401c0800000000000000
+      internalID: -4538225708983276127
       vertices: []
       indices: 
       edges: []
@@ -187,7 +237,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spring_platform-02_0: -3783328935998231722
+      Sound-Two_0: 8017771977026345209
+      Sound-Two_1: -7811332966407008764
+      Sound-Two_2: -4538225708983276127
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

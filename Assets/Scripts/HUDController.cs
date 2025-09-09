@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class HUDController : MonoBehaviour
 {
+
+    [SerializeField] private Texture2D soundOnIcon;
+    [SerializeField] private Texture2D soundOffIcon;
+
+
     private Label scoreLabel;
     private Label highScoreLabel;
 
@@ -13,6 +18,7 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private GameObject soundtrack;
     private AudioSource audioSource;
+    private GameManager gameManager;
 
     void OnEnable()
     {
@@ -27,9 +33,11 @@ public class HUDController : MonoBehaviour
             reloadButton.clicked += Reload;
         if (soundButton != null)
             soundButton.clicked += SoundConfig;
+        gameManager = FindFirstObjectByType<GameManager>();
         // restore sound setting
         bool soundOn = PlayerPrefs.GetInt("soundOn", 1) == 1;
         audioSource.mute = !soundOn;
+        UpdateSoundButtonIcon(!audioSource.mute);
     }
 
     private void OnDisable()
@@ -54,17 +62,35 @@ public class HUDController : MonoBehaviour
 
     private void Reload()
     {
-        Time.timeScale = 1f;
-        currentScore = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (gameManager != null)
+        {
+            gameManager.GameOver();
+            HideButtons();
+        }
     }
-    
+
     private void SoundConfig()
     {
         if (audioSource != null)
         {
             audioSource.mute = !audioSource.mute;
             PlayerPrefs.SetInt("soundOn", audioSource.mute ? 0 : 1);
+            UpdateSoundButtonIcon(!audioSource.mute);
         }
+    }
+    private void UpdateSoundButtonIcon(bool soundOn)
+    {
+        if (soundButton != null)
+        {
+            soundButton.style.backgroundImage = new StyleBackground(soundOn ? soundOnIcon : soundOffIcon);
+        }
+    }
+
+    public void HideButtons()
+    {
+        if (soundButton != null)
+            soundButton.style.display = DisplayStyle.None;
+        if (reloadButton != null)
+            reloadButton.style.display = DisplayStyle.None;
     }
 }
