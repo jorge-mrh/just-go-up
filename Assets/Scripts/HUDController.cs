@@ -8,6 +8,7 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private Texture2D soundOnIcon;
     [SerializeField] private Texture2D soundOffIcon;
+    [SerializeField] private VisualTreeAsset pauseUIAsset;
 
 
     private Label scoreLabel;
@@ -18,11 +19,12 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private GameObject soundtrack;
     private AudioSource audioSource;
-    private GameManager gameManager;
+    private PauseUIController pauseManager;
+    private VisualElement root;
 
     void OnEnable()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
+        root = GetComponent<UIDocument>().rootVisualElement;
         scoreLabel = root.Q<Label>("score-label");
         highScoreLabel = root.Q<Label>("highscore-label");
         highScoreLabel.text = "HS " + PlayerPrefs.GetFloat("highScore", 0).ToString();
@@ -33,11 +35,21 @@ public class HUDController : MonoBehaviour
             reloadButton.clicked += Reload;
         if (soundButton != null)
             soundButton.clicked += SoundConfig;
-        gameManager = FindFirstObjectByType<GameManager>();
+        pauseManager = FindFirstObjectByType<PauseUIController>();
         // restore sound setting
         bool soundOn = PlayerPrefs.GetInt("soundOn", 1) == 1;
         audioSource.mute = !soundOn;
         UpdateSoundButtonIcon(!audioSource.mute);
+    }
+
+    public void HideHUD()
+    {
+        root.style.display = DisplayStyle.None;
+    }
+
+    public void ShowHUD()
+    {
+        root.style.display = DisplayStyle.Flex;
     }
 
     private void OnDisable()
@@ -62,11 +74,16 @@ public class HUDController : MonoBehaviour
 
     private void Reload()
     {
-        if (gameManager != null)
+        if (pauseManager.isPaused)
         {
-            gameManager.GameOver();
-            HideButtons();
+            ShowHUD();
+            pauseManager.UnPause();
         }
+        else
+        {
+            HideHUD();
+            pauseManager.Pause();
+        }        
     }
 
     private void SoundConfig()

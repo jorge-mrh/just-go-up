@@ -56,6 +56,9 @@ public class GameManager : MonoBehaviour
 
     private void ShowGameOverUI()
     {
+        var hudController = FindFirstObjectByType<HUDController>();
+        if (hudController != null)
+            hudController.HideHUD();
         if (gameOverUIAsset == null)
         {
             Debug.LogError("GameOver UI Asset not assigned!");
